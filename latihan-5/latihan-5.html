@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+  </head>
+  <body>
+    <h2>FORMULIR PENDAFTARAN MAHASISWA BARU</h2>
+    <p>Tahun Akademik: 20XX/20XX</p>
+    <p>STMIK KAPUTAMA</p>
+    <p>Jl. [Alamat Kampus], Telp. [Nomor Telepon]</p>
+    <p>Website: [URL Website Kampus] | Email: [Alamat Email Resmi]</p>
+
+    <form action="#" method="post">
+      <h3>A. DATA PRIBADI</h3>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td>1. Nama Lengkap</td>
+          <td><input type="text" name="nama_lengkap" size="50" /></td>
+        </tr>
+        <tr>
+          <td>2. Tempat/Tanggal Lahir</td>
+          <td><input type="text" name="ttl" size="50" /></td>
+        </tr>
+        <tr>
+          <td>3. Jenis Kelamin</td>
+          <td>
+            <input type="radio" name="jk" value="Laki-laki" /> Laki-laki
+            <input type="radio" name="jk" value="Perempuan" /> Perempuan
+          </td>
+        </tr>
+        <tr>
+          <td>4. Agama</td>
+          <td>
+            <input type="checkbox" name="agama" value="Islam" /> Islam
+            <input type="checkbox" name="agama" value="Kristen" /> Kristen
+            <input type="checkbox" name="agama" value="Katolik" /> Katolik
+            <input type="checkbox" name="agama" value="Hindu" /> Hindu
+            <input type="checkbox" name="agama" value="Buddha" /> Buddha
+            <input type="text" name="agama_lain" placeholder="Lainnya" />
+          </td>
+        </tr>
+        <tr>
+          <td>5. Alamat Lengkap</td>
+          <td><textarea name="alamat" rows="3" cols="50"></textarea></td>
+        </tr>
+        <tr>
+          <td>6. No. HP / WhatsApp</td>
+          <td><input type="text" name="no_hp" size="50" /></td>
+        </tr>
+        <tr>
+          <td>7. Email Aktif</td>
+          <td><input type="email" name="email" size="50" /></td>
+        </tr>
+        <tr>
+          <td>8. Golongan Darah</td>
+          <td>
+            <input type="checkbox" name="goldar" value="A" /> A
+            <input type="checkbox" name="goldar" value="B" /> B
+            <input type="checkbox" name="goldar" value="AB" /> AB
+            <input type="checkbox" name="goldar" value="O" /> O
+            <input type="checkbox" name="goldar" value="Tidak Tahu" /> Tidak
+            Tahu
+          </td>
+        </tr>
+        <tr>
+          <td>9. Status Perkawinan</td>
+          <td>
+            <input type="radio" name="status" value="Belum Kawin" /> Belum Kawin
+            <input type="radio" name="status" value="Kawin" /> Kawin
+            <input type="radio" name="status" value="Cerai" /> Cerai
+          </td>
+        </tr>
+      </table>
+
+      <h3>B. DATA PENDIDIKAN</h3>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td>1. Asal Sekolah</td>
+          <td><input type="text" name="asal_sekolah" size="50" /></td>
+        </tr>
+        <tr>
+          <td>2. Jurusan di SMA/SMK/MA</td>
+          <td><input type="text" name="jurusan" size="50" /></td>
+        </tr>
+        <tr>
+          <td>3. Tahun Lulus</td>
+          <td><input type="text" name="tahun_lulus" size="50" /></td>
+        </tr>
+        <tr>
+          <td>4. Nomor Ijazah</td>
+          <td><input type="text" name="no_ijazah" size="50" /></td>
+        </tr>
+        <tr>
+          <td>5. Nilai Rata-Rata</td>
+          <td><input type="text" name="nilai_rata" size="50" /></td>
+        </tr>
+      </table>
+
+      <h3>C. PILIHAN PROGRAM STUDI</h3>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td>
+            <input type="checkbox" name="prodi" value="Sistem Informasi" />
+            Sistem Informasi<br />
+            <input type="checkbox" name="prodi" value="Teknik Informatika" />
+            Teknik Informatika<br />
+            <input type="text" name="prodi_lain" placeholder="Lainnya" />
+          </td>
+        </tr>
+      </table>
+
+      <h3>D. DATA ORANG TUA/WALI</h3>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td>1. Nama Ayah</td>
+          <td><input type="text" name="nama_ayah" size="50" /></td>
+        </tr>
+        <tr>
+          <td>2. Nama Ibu</td>
+          <td><input type="text" name="nama_ibu" size="50" /></td>
+        </tr>
+        <tr>
+          <td>3. Pekerjaan Orang Tua</td>
+          <td><input type="text" name="pekerjaan_ortu" size="50" /></td>
+        </tr>
+        <tr>
+          <td>4. Alamat Orang Tua</td>
+          <td><textarea name="alamat_ortu" rows="3" cols="50"></textarea></td>
+        </tr>
+        <tr>
+          <td>5. No. HP Orang Tua</td>
+          <td><input type="text" name="hp_ortu" size="50" /></td>
+        </tr>
+      </table>
+
+      <h3>E. LAMPIRAN BERKAS</h3>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td>
+            <input type="checkbox" name="lampiran" value="Ijazah" /> Fotokopi
+            Ijazah Terakhir (dilegalisir)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="lampiran" value="SKHUN" /> Fotokopi
+            SKHUN (dilegalisir)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="lampiran" value="KTP_KK" /> Fotokopi
+            KTP & KK
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="lampiran" value="Foto" /> Pas Foto 3x4
+            (3 lembar)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="lampiran" value="SKL" /> Surat
+            Keterangan Lulus
+          </td>
+        </tr>
+        <tr>
+          <td>Berkas lain: <input type="text" name="berkas_lain" /></td>
+        </tr>
+      </table>
+
+      <h3>F. PERNYATAAN</h3>
+      <p>
+        Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya
+        isikan dalam formulir ini adalah benar dan dapat dipertanggungjawabkan.
+        Apabila di kemudian hari terdapat ketidaksesuaian, saya bersedia
+        menerima sanksi yang berlaku.
+      </p>
+      <table>
+        <tr>
+          <td>Tempat, Tanggal:</td>
+          <td><input type="text" name="ttd_tanggal" size="40" /></td>
+        </tr>
+        <tr>
+          <td>Tanda Tangan:</td>
+          <td><input type="text" name="ttd_nama" size="40" /></td>
+        </tr>
+      </table>
+      <br />
+
+      <input type="submit" value="Kirim Formulir" />
+    </form>
+  </body>
+</html>
