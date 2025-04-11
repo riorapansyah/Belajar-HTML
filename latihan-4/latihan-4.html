@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulir Registrasi</title>
+  </head>
+  <body>
+    <table border="1" align="center" bgcolor="#F7CFD8" cellpadding="10">
+      <tr>
+        <td colspan="2" align="center">
+          <h3>Formulir Registrasi</h3>
+        </td>
+      </tr>
+      <tr>
+        <td>Nama Lengkap</td>
+        <td>
+          <input type="text" name="nama" placeholder="Masukkan nama Anda" />
+        </td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td>
+          <select name="gender">
+            <option value="pria">Pria</option>
+            <option value="wanita">Wanita</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Hobi</td>
+        <td>
+          <input type="checkbox" name="hobi" value="Membaca" /> Membaca<br />
+          <input type="checkbox" name="hobi" value="Menulis" /> Menulis<br />
+          <input type="checkbox" name="hobi" value="Musik" /> Musik
+        </td>
+      </tr>
+      <tr>
+        <td>Agama</td>
+        <td>
+          <input type="radio" name="agama" value="Islam" /> Islam<br />
+          <input type="radio" name="agama" value="Kristen" /> Kristen<br />
+          <input type="radio" name="agama" value="Hindu" /> Hindu<br />
+          <input type="radio" name="agama" value="Budha" /> Budha
+        </td>
+      </tr>
+      <tr>
+        <td>Alamat</td>
+        <td>
+          <textarea
+            name="alamat"
+            rows="4"
+            cols="28"
+            placeholder="Tulis alamat lengkap..."></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Daftar" />
+          <input type="reset" value="Ulangi" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
