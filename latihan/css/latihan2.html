@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Text Styling Guide</title>
+    <style>
+      :root {
+        --primary-color: #6c5ce7;
+        --secondary-color: #a29bfe;
+        --accent-color: #fd79a8;
+        --light-color: #f9f9f9;
+        --dark-color: #2d3436;
+        --success-color: #00b894;
+        --warning-color: #fdcb6e;
+        --gradient-bg: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.7;
+        color: var(--dark-color);
+        background: #fafafa;
+        overflow-x: hidden;
+      }
+
+      .page-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        background: var(--primary-color);
+        color: white;
+        padding: 2rem 1rem;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar-header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 1rem;
+      }
+
+      .sidebar-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-subtitle {
+        font-size: 0.85rem;
+        opacity: 0.8;
+      }
+
+      .nav-list {
+        list-style: none;
+      }
+
+      .nav-item {
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        transform: translateX(5px);
+      }
+
+      main {
+        padding: 2rem;
+        background: white;
+      }
+
+      .hero {
+        background: var(--gradient-bg);
+        padding: 3rem;
+        margin: -2rem -2rem 2rem -2rem;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .hero-description {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        color: var(--dark-color);
+        opacity: 0.8;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+      }
+
+      .property-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .property-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        padding: 1.5rem;
+        background: var(--primary-color);
+        color: white;
+        position: relative;
+      }
+
+      .card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-description {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .property-name {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        margin-right: 0.5rem;
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .example-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .example-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .example-value {
+        font-family: "Fira Code", monospace;
+        background: #f5f5f5;
+        color: var(--accent-color);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+
+      .example-output {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f9f9f9;
+        border-radius: 8px;
+        border: 1px dashed #ddd;
+      }
+
+      /* Kategori CSS Properties */
+
+      /* Warna */
+      .color-red {
+        color: red;
+      }
+
+      .color-green {
+        color: green;
+      }
+
+      .color-blue {
+        color: blue;
+      }
+
+      .color-dst {
+        color: darkslategray;
+      }
+
+      /* Letter Spacing */
+      .letter-normal {
+        letter-spacing: normal;
+      }
+
+      .letter-length {
+        letter-spacing: 5px;
+      }
+
+      /* Text Align */
+      .align-left {
+        text-align: left;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .align-justify {
+        text-align: justify;
+      }
+
+      /* Text Decoration */
+      .dec-none {
+        text-decoration: none;
+      }
+
+      .dec-underline {
+        text-decoration: underline;
+      }
+
+      .dec-overline {
+        text-decoration: overline;
+      }
+
+      .dec-line-through {
+        text-decoration: line-through;
+      }
+
+      .dec-blink {
+        text-decoration: blink;
+      }
+
+      /* Text Indent */
+      .indent-length {
+        text-indent: 40px;
+      }
+
+      .indent-percent {
+        text-indent: 10%;
+      }
+
+      /* Text Transform */
+      .tt-capitalize {
+        text-transform: capitalize;
+      }
+
+      .tt-uppercase {
+        text-transform: uppercase;
+      }
+
+      .tt-lowercase {
+        text-transform: lowercase;
+      }
+
+      .tt-none {
+        text-transform: none;
+      }
+
+      /* Font Family */
+      .font-arial {
+        font-family: Arial, sans-serif;
+      }
+
+      .font-comic {
+        font-family: "Comic Sans MS", cursive;
+      }
+
+      .font-dst {
+        font-family: Georgia, serif;
+      }
+
+      /* Font Size */
+      .size-small {
+        font-size: small;
+      }
+
+      .size-medium {
+        font-size: medium;
+      }
+
+      .size-large {
+        font-size: large;
+      }
+
+      .size-length {
+        font-size: 24px;
+      }
+
+      .size-percent {
+        font-size: 150%;
+      }
+
+      /* Font Style */
+      .style-normal {
+        font-style: normal;
+      }
+
+      .style-italic {
+        font-style: italic;
+      }
+
+      .style-oblique {
+        font-style: oblique;
+      }
+
+      /* Font Weight */
+      .weight-normal {
+        font-weight: normal;
+      }
+
+      .weight-bold {
+        font-weight: bold;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: var(--dark-color);
+        color: white;
+        margin: 2rem -2rem -2rem -2rem;
+      }
+
+      .footer-content {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .footer-links {
+        margin-top: 1rem;
+      }
+
+      .footer-link {
+        color: var(--secondary-color);
+        margin: 0 0.5rem;
+        text-decoration: none;
+      }
+
+      .footer-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .page-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+          height: auto;
+          padding: 1rem;
+        }
+
+        .hero {
+          padding: 2rem 1rem;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">CSS Text Styling</div>
+          <div class="sidebar-subtitle">Dokumentasi Lengkap</div>
+        </div>
+
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#color" class="nav-link">Color Properties</a>
+            </li>
+            <li class="nav-item">
+              <a href="#letter-spacing" class="nav-link">Letter Spacing</a>
+            </li>
+            <li class="nav-item">
+              <a href="#text-align" class="nav-link">Text Align</a>
+            </li>
+            <li class="nav-item">
+              <a href="#text-decoration" class="nav-link">Text Decoration</a>
+            </li>
+            <li class="nav-item">
+              <a href="#text-indent" class="nav-link">Text Indent</a>
+            </li>
+            <li class="nav-item">
+              <a href="#text-transform" class="nav-link">Text Transform</a>
+            </li>
+            <li class="nav-item">
+              <a href="#font-family" class="nav-link">Font Family</a>
+            </li>
+            <li class="nav-item">
+              <a href="#font-size" class="nav-link">Font Size</a>
+            </li>
+            <li class="nav-item">
+              <a href="#font-style" class="nav-link">Font Style</a>
+            </li>
+            <li class="nav-item">
+              <a href="#font-weight" class="nav-link">Font Weight</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="hero">
+          <h1 class="hero-title">CSS Text Styling Guide</h1>
+          <p class="hero-description">
+            Panduan lengkap untuk memahami dan menerapkan berbagai properti CSS
+            untuk styling text pada elemen HTML. Setiap properti disertai contoh
+            visual untuk mempermudah pemahaman.
+          </p>
+        </section>
+
+        <div class="card-grid">
+          <!-- Color Properties -->
+          <section id="color" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Color Properties</h2>
+              <p class="card-description">
+                Properti <span class="property-name">color</span> digunakan
+                untuk mengatur warna teks pada elemen.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">red</div>
+                <div class="example-output color-red">Contoh teks merah</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">green</div>
+                <div class="example-output color-green">Contoh teks hijau</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">blue</div>
+                <div class="example-output color-blue">Contoh teks biru</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">darkslategray</div>
+                <div class="example-output color-dst">
+                  Contoh teks abu gelap
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Letter Spacing -->
+          <section id="letter-spacing" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Letter Spacing</h2>
+              <p class="card-description">
+                Properti
+                <span class="property-name">letter-spacing</span> mengatur jarak
+                antar huruf dalam teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">normal</div>
+                <div class="example-output letter-normal">
+                  Teks tanpa jarak tambahan
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">5px</div>
+                <div class="example-output letter-length">
+                  T e k s d e n g a n j a r a k
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Text Align -->
+          <section id="text-align" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Text Align</h2>
+              <p class="card-description">
+                Properti <span class="property-name">text-align</span> mengatur
+                perataan horizontal teks dalam elemen.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">left</div>
+                <div class="example-output align-left">Teks rata kiri</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">center</div>
+                <div class="example-output align-center">Teks rata tengah</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">right</div>
+                <div class="example-output align-right">Teks rata kanan</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">justify</div>
+                <div class="example-output align-justify">
+                  Teks ini disusun agar memenuhi lebar kontainer, menggunakan
+                  penyusunan justify agar teksnya terlihat rapi di kedua sisi.
+                  Tambahan kata untuk menunjukkan efek justify yang lebih jelas.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Text Decoration -->
+          <section id="text-decoration" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Text Decoration</h2>
+              <p class="card-description">
+                Properti
+                <span class="property-name">text-decoration</span> menambahkan
+                dekorasi pada teks seperti garis bawah, atas, atau coret.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">none</div>
+                <div class="example-output dec-none">Tanpa dekorasi</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">underline</div>
+                <div class="example-output dec-underline">
+                  Teks bergaris bawah
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">overline</div>
+                <div class="example-output dec-overline">
+                  Teks bergaris atas
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">line-through</div>
+                <div class="example-output dec-line-through">Teks dicoret</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">blink</div>
+                <div class="example-output dec-blink">
+                  Teks blink (tidak didukung sebagian besar browser)
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Text Indent -->
+          <section id="text-indent" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Text Indent</h2>
+              <p class="card-description">
+                Properti <span class="property-name">text-indent</span> mengatur
+                indentasi baris pertama dalam blok teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">40px</div>
+                <div class="example-output indent-length">
+                  Paragraf ini memiliki indentasi awal 40px. Ini dapat membantu
+                  membuat paragraf terlihat lebih terstruktur.
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">10%</div>
+                <div class="example-output indent-percent">
+                  Paragraf ini menggunakan indentasi 10% dari lebar elemen.
+                  Indentasi persentase akan menyesuaikan dengan lebar elemen.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Text Transform -->
+          <section id="text-transform" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Text Transform</h2>
+              <p class="card-description">
+                Properti
+                <span class="property-name">text-transform</span> mengontrol
+                kapitalisasi teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">capitalize</div>
+                <div class="example-output tt-capitalize">
+                  setiap awal kata besar seperti ini
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">uppercase</div>
+                <div class="example-output tt-uppercase">
+                  teks huruf besar semua
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">lowercase</div>
+                <div class="example-output tt-lowercase">
+                  TEKS DIKECILKAN SEMUA
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">none</div>
+                <div class="example-output tt-none">Teks apa adanya</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Font Family -->
+          <section id="font-family" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Font Family</h2>
+              <p class="card-description">
+                Properti
+                <span class="property-name">font-family</span> menentukan
+                keluarga font yang digunakan untuk teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">Arial, sans-serif</div>
+                <div class="example-output font-arial">Teks dengan Arial</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">"Comic Sans MS", cursive</div>
+                <div class="example-output font-comic">
+                  Teks dengan Comic Sans
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">Georgia, serif</div>
+                <div class="example-output font-dst">Teks dengan Georgia</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Font Size -->
+          <section id="font-size" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Font Size</h2>
+              <p class="card-description">
+                Properti <span class="property-name">font-size</span> mengatur
+                ukuran font teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">small</div>
+                <div class="example-output size-small">Teks kecil</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">medium</div>
+                <div class="example-output size-medium">Teks sedang</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">large</div>
+                <div class="example-output size-large">Teks besar</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">24px</div>
+                <div class="example-output size-length">Teks 24px</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">150%</div>
+                <div class="example-output size-percent">Teks 150%</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Font Style -->
+          <section id="font-style" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Font Style</h2>
+              <p class="card-description">
+                Properti <span class="property-name">font-style</span> mengatur
+                gaya miring dari teks.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">normal</div>
+                <div class="example-output style-normal">Teks normal</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">italic</div>
+                <div class="example-output style-italic">
+                  Teks miring italic
+                </div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">oblique</div>
+                <div class="example-output style-oblique">
+                  Teks miring oblique
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Font Weight -->
+          <section id="font-weight" class="property-card">
+            <div class="card-header">
+              <h2 class="card-title">Font Weight</h2>
+              <p class="card-description">
+                Properti <span class="property-name">font-weight</span> mengatur
+                ketebalan dari font.
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="example-item">
+                <div class="example-value">normal</div>
+                <div class="example-output weight-normal">Teks biasa</div>
+              </div>
+
+              <div class="example-item">
+                <div class="example-value">bold</div>
+                <div class="example-output weight-bold">Teks tebal</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <footer>
+          <div class="footer-content">
+            <p>Dokumentasi CSS Text Styling &copy; 2025</p>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Beranda</a>
+              <a href="#" class="footer-link">Panduan</a>
+              <a href="#" class="footer-link">Kontak</a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // Simple script to highlight active navigation link
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            navLinks.forEach((l) => l.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

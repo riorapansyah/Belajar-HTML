@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Akademik</title>
+    <style>
+      :root {
+        --primary-color: #4f46e5;
+        --primary-light: #a5b4fc;
+        --primary-dark: #312e81;
+        --secondary-color: #334155;
+        --accent-color: #ec4899;
+        --light-bg: #f5f7fa;
+        --card-bg: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --success: #22c55e;
+        --warning: #eab308;
+        --danger: #dc2626;
+        --border-radius: 12px;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: var(--text-primary);
+        line-height: 1.7;
+        padding: 1.5rem;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      .header h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+
+      .header p {
+        opacity: 0.9;
+        font-size: 1rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--primary-light);
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-icon {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.2rem;
+      }
+
+      /* Table Styles */
+      .table-container {
+        overflow-x: auto;
+        margin-bottom: 1rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.95rem;
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      th {
+        background-color: var(--secondary-color);
+        color: white;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+      }
+
+      table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Schedule Table */
+      .schedule-table tr:hover {
+        background-color: #f8fafc;
+      }
+
+      .day-cell {
+        font-weight: 700;
+        color: var(--primary-dark);
+        background-color: rgba(79, 70, 229, 0.1);
+        border-right: 3px solid var(--primary-color);
+      }
+
+      .time-cell {
+        color: var(--secondary-color);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .subject-cell {
+        font-weight: 500;
+        color: var(--primary-color);
+      }
+
+      /* Student Table */
+      .student-table {
+        margin: 0 auto;
+        max-width: 850px;
+      }
+
+      .student-table th {
+        background: linear-gradient(to right, var(--secondary-color), #475569);
+      }
+
+      .student-table tr:hover {
+        background-color: #f8fafc;
+      }
+
+      /* Badges and Status */
+      .badge {
+        padding: 0.35rem 0.65rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      .badge-jurusan {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+      }
+
+      .nilai-cell {
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .nilai-a {
+        color: var(--success);
+      }
+
+      .nilai-b {
+        color: var(--warning);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--secondary-color);
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        margin-top: 2rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem 0.5rem;
+        }
+
+        .header {
+          padding: 1.5rem 1rem;
+        }
+
+        .card {
+          padding: 1.2rem;
+        }
+
+        th,
+        td {
+          padding: 0.75rem 0.5rem;
+        }
+
+        .section-title {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Portal Akademik Mahasiswa</h1>
+        <p>Informasi Jadwal dan Nilai Semester Berjalan</p>
+      </div>
+
+      <section class="card">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-icon">📚</div>
+            Jadwal Perkuliahan
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Waktu</th>
+                <th>Mata Kuliah</th>
+                <th>Kelas</th>
+                <th>Ruangan</th>
+                <th>Dosen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="day-cell" rowspan="4">Senin</td>
+                <td class="time-cell">08.00-09.00</td>
+                <td class="subject-cell">Matematika</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 1</td>
+                <td>Bapak Eka</td>
+              </tr>
+              <tr>
+                <td class="time-cell">09.00-10.00</td>
+                <td class="subject-cell">Bahasa Indonesia</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 2</td>
+                <td>Ibu Rina</td>
+              </tr>
+              <tr>
+                <td class="time-cell">10.00-11.00</td>
+                <td class="subject-cell">Bahasa Inggris</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 3</td>
+                <td>Bapak Agus</td>
+              </tr>
+              <tr>
+                <td class="time-cell">11.00-12.00</td>
+                <td class="subject-cell">Biologi</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 4</td>
+                <td>Bapak Anton</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-icon">📊</div>
+            Daftar Nilai Mahasiswa
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="student-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Nama Mahasiswa</th>
+                <th rowspan="2">Program Studi</th>
+                <th colspan="2">Nilai Ujian</th>
+                <th rowspan="2">Nilai Akhir</th>
+              </tr>
+              <tr>
+                <th>UTS</th>
+                <th>UAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tono</td>
+                <td><span class="badge badge-jurusan">TIK</span></td>
+                <td class="nilai-cell">80</td>
+                <td class="nilai-cell">75</td>
+                <td class="nilai-cell nilai-b">B</td>
+              </tr>
+              <tr>
+                <td>Putri</td>
+                <td><span class="badge badge-jurusan">SI</span></td>
+                <td class="nilai-cell">85</td>
+                <td class="nilai-cell">90</td>
+                <td class="nilai-cell nilai-a">A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Sistem Informasi Akademik Universitas</p>
+      </footer>
+    </div>
+  </body>
+</html>

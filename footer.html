@@ -1,14 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Footer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 100%;
+        background: linear-gradient(to right, #2c3e50, #3498db);
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .university-logo {
+        width: 40px;
+        height: 40px;
+        background-color: #ecf0f1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 16px;
+      }
+
+      .footer-info {
+        line-height: 1.4;
+      }
+
+      .course-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #ecf0f1;
+      }
+
+      .semester {
+        font-size: 0.8rem;
+        color: #bdc3c7;
+      }
+
+      .team-members {
+        display: flex;
+        gap: 20px;
+      }
+
+      .member {
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .member:hover {
+        transform: translateY(-3px);
+      }
+
+      .member-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #ecf0f1;
+        margin-bottom: 3px;
+      }
+
+      .member-id {
+        font-size: 0.8rem;
+        color: #bdc3c7;
+      }
+
+      .copyright {
+        font-size: 0.8rem;
+        color: #bdc3c7;
+      }
+
+      @media (max-width: 768px) {
+        footer {
+          flex-direction: column;
+          padding: 10px;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .footer-left {
+          margin-bottom: 10px;
+        }
+
+        .team-members {
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h3 align="center">
-      Rio Rapansyah - 24451071 :Fauzul Azhmi siregar - 24451021 DM Alfi Syahri -
-      24451052
-    </h3>
+    <footer>
+      <div class="footer-left">
+        <div class="footer-info">
+          <div class="course-name">Pemrograman Web Dasar</div>
+          <div class="semester">Semester-2 2025</div>
+        </div>
+      </div>
+
+      <div class="team-members">
+        <div class="member">
+          <div class="member-name">Rio Rapansyah</div>
+          <div class="member-id">24451071</div>
+        </div>
+        <div class="member">
+          <div class="member-name">Fauzul Azmi S</div>
+          <div class="member-id">24451021</div>
+        </div>
+        <div class="member">
+          <div class="member-name">DM Alfi Syahri</div>
+          <div class="member-id">24451052</div>
+        </div>
+      </div>
+
+      <div class="copyright">&copy; 2025 Teknik Informatika</div>
+    </footer>
   </body>
 </html>

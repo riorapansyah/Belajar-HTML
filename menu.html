@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      .sidebar {
+        background-color: #f8f9fa;
+        height: 100%;
+        box-shadow: inset -5px 0 15px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-container {
+        padding: 15px;
+      }
+
+      .menu-category {
+        margin-bottom: 20px;
+      }
+
+      .category-title {
+        background-color: #3498db;
+        color: white;
+        padding: 12px 15px;
+        font-size: 1.1rem;
+        border-radius: 8px 8px 0 0;
+        margin: 0;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+      }
+
+      .category-title i {
+        margin-right: 10px;
+      }
+
+      .menu-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-item {
+        border-bottom: 1px solid #eaeaea;
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+
+      .menu-link {
+        display: block;
+        padding: 12px 15px;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      .menu-link:hover {
+        background-color: #e9f7fe;
+        color: #2980b9;
+        padding-left: 20px;
+      }
+
+      .html-category .category-title {
+        background-color: #e74c3c;
+      }
+
+      .html-category .menu-link:hover {
+        background-color: #fde9e7;
+        color: #c0392b;
+      }
+
+      .css-category .category-title {
+        background-color: #27ae60;
+      }
+
+      .css-category .menu-link:hover {
+        background-color: #e9f9f1;
+        color: #219653;
+      }
+
+      .js-category .category-title {
+        background-color: #f39c12;
+      }
+
+      .js-category .menu-link:hover {
+        background-color: #fef5e7;
+        color: #d35400;
+      }
+
+      /* Icons */
+      .icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="menu-container">
+        <div class="menu-category html-category">
+          <h3 class="category-title">
+            <span class="icon">📄</span>Tutorial HTML
+          </h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a
+                href="latihan/html/latihan1.html"
+                target="content"
+                class="menu-link"
+                >Dasar HTML</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/html/latihan2.html"
+                target="content"
+                class="menu-link"
+                >Struktur Halaman</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/html/latihan3.html"
+                target="content"
+                class="menu-link"
+                >Tabel & Form</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/html/latihan4.html"
+                target="content"
+                class="menu-link"
+                >Media & Embed</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/html/latihan5.html"
+                target="content"
+                class="menu-link"
+                >Semantik HTML5</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category css-category">
+          <h3 class="category-title">
+            <span class="icon">🎨</span>Tutorial CSS
+          </h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a
+                href="latihan/css/latihan1.html"
+                target="content"
+                class="menu-link"
+                >Pengenalan CSS</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/css/latihan2.html"
+                target="content"
+                class="menu-link"
+                >Box Model</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/css/latihan3.html"
+                target="content"
+                class="menu-link"
+                >Layout Flexbox</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/css/latihan4.html"
+                target="content"
+                class="menu-link"
+                >CSS Grid</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/css/latihan5.html"
+                target="content"
+                class="menu-link"
+                >Media Queries</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category js-category">
+          <h3 class="category-title">
+            <span class="icon">⚙️</span>Tutorial JavaScript
+          </h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan1.html"
+                target="content"
+                class="menu-link"
+                >Pengenalan JS</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan2.html"
+                target="content"
+                class="menu-link"
+                >Variabel & Tipe Data</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan3.html"
+                target="content"
+                class="menu-link"
+                >Fungsi & Event</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan4.html"
+                target="content"
+                class="menu-link"
+                >DOM Manipulation</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan5.html"
+                target="content"
+                class="menu-link"
+                >Array & Objects</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan6.html"
+                target="content"
+                class="menu-link"
+                >Conditional & Loop</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan7.html"
+                target="content"
+                class="menu-link"
+                >Form Validation</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan8.html"
+                target="content"
+                class="menu-link"
+                >Local Storage</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan9.html"
+                target="content"
+                class="menu-link"
+                >AJAX & Fetch API</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan10.html"
+                target="content"
+                class="menu-link"
+                >JSON Handling</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan11.html"
+                target="content"
+                class="menu-link"
+                >Error Handling</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan12.html"
+                target="content"
+                class="menu-link"
+                >ES6 Features</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan13.html"
+                target="content"
+                class="menu-link"
+                >Best Practices</a
+              >
+            </li>
+            <li class="menu-item">
+              <a
+                href="latihan/js/latihan14.html"
+                target="content"
+                class="menu-link"
+                >Project Aplikasi</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
